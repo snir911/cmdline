@@ -58,10 +58,10 @@ function handleCommand(cmd) {
         default:
             // Handle echo command
             if (trimmedCmd.startsWith('echo ')) {
-                const text = cmd.substring(5);
+                const text = cmd.trim().substring(5);
                 addOutput(text, 'response');
             } else {
-                addOutput(`Command not found: ${cmd}`, 'error');
+                addOutput(`Command not found: ${trimmedCmd}`, 'error');
                 addOutput('Type "help" for available commands', 'response');
             }
             break;
